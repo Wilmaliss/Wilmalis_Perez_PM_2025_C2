@@ -1,0 +1,5 @@
+109.209 texto
+308.40 datos
+0.0 no cuenta
+abc208.10 se ignora
+409.50 prueba
