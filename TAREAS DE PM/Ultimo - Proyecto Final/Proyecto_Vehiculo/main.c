@@ -590,20 +590,40 @@ void modificarVehiculo(void) {
 
 // DATOS GENERALES
 void configurarCombustible(void) {
-    // Configura los costos de gasolina y gasoil
+    // Limpia la pantalla y muestra el logo
     CLEAR();
     mostrarLogo();
     setColor(COLOR_BORDE_APP);
-    printf("=== CONFIGURAR COSTO DE COMBUSTIBLE ===\n");
-    printf("(Escribe '##' para cancelar en cualquier campo)\n\n");
+    printf("=== CONFIGURAR COSTO DE COMBUSTIBLE ===\n\n");
+
+    // Muestra los costos de combustible registrados
+    mostrarDatosCombustible();
+
+    // Pregunta si desea cambiar los costos
+    if (!confirmar("Desea cambiar los costos de combustible")) {
+        setColor(COLOR_BORDE_APP);
+        printf("\nNo se realizaron cambios.\n");
+        PAUSE();
+        return;
+    }
+
+    // Pide nuevos costos si el usuario elige "sí"
     bool cancel = false;
     float nuevoGas = g_datos.gasolina;
     float nuevoGso = g_datos.gasoil;
-    if (!leerFloat("Precio gasolina por galón: ", &nuevoGas, 0.0f, 1e6f, true, &cancel)) {
-        setColor(COLOR_ERROR); printf("\nCancelado.\n"); setColor(COLOR_BORDE_APP); PAUSE(); return;
+    if (!leerFloat("Precio gasolina por galon: ", &nuevoGas, 0.0f, 1e6f, true, &cancel)) {
+        setColor(COLOR_ERROR);
+        printf("\nCancelado.\n");
+        setColor(COLOR_BORDE_APP);
+        PAUSE();
+        return;
     }
-    if (!leerFloat("Precio gasoil por galón:  ", &nuevoGso, 0.0f, 1e6f, true, &cancel)) {
-        setColor(COLOR_ERROR); printf("\nCancelado.\n"); setColor(COLOR_BORDE_APP); PAUSE(); return;
+    if (!leerFloat("Precio gasoil por galon:  ", &nuevoGso, 0.0f, 1e6f, true, &cancel)) {
+        setColor(COLOR_ERROR);
+        printf("\nCancelado.\n");
+        setColor(COLOR_BORDE_APP);
+        PAUSE();
+        return;
     }
     g_datos.gasolina = nuevoGas;
     g_datos.gasoil = nuevoGso;
@@ -613,7 +633,6 @@ void configurarCombustible(void) {
     setColor(COLOR_BORDE_APP);
     PAUSE();
 }
-
 void mostrarDatosCombustible(void) {
     // Muestra los costos de combustible
     setColor(COLOR_BORDE_APP);
