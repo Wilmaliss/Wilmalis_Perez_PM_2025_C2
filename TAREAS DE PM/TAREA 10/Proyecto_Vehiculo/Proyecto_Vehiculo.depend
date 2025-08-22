@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1755229980 source:c:\users\wilma\onedrive\documentos\programacion para mecatronica\wilmalis_perez_pm_2025_c2\tareas de pm\tarea 10\proyecto_vehiculo1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<stdbool.h>
+	<time.h>
+	<windows.h>
+
