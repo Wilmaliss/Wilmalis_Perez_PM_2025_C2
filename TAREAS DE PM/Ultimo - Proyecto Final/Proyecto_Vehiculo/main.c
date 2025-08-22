@@ -678,7 +678,7 @@ void calcularCostoViaje(void) {
     CLEAR();
     mostrarLogo();
     setColor(COLOR_BORDE_APP);
-    printf("=== CÁLCULO DE COSTO DE VIAJE ===\n\n");
+    printf("=== CALCULO DE COSTO DE VIAJE ===\n\n");
     // Muestra los costos de combustible (comentar si no se desea)
     // mostrarDatosCombustible();
     // Lista los vehículos disponibles
@@ -703,7 +703,7 @@ void calcularCostoViaje(void) {
     CLEAR();
     mostrarLogo();
     setColor(COLOR_BORDE_APP);
-    printf("=== CÁLCULO DE COSTO DE VIAJE ===\n\n");
+    printf("=== CALCULO DE COSTO DE VIAJE ===\n\n");
     printf("Vehiculo elegido: %s %s (%s)\n\n", v->marca, v->modelo, v->placa);
 
     // Pide los kilometros del viaje y el porcentaje en ciudad
